@@ -47,7 +47,7 @@ const AllAttendance = () => {
   return (
     <MainLayout>
       <div className="space-y-6">
-        {/* Header */}
+        
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <div className="flex items-center">
             <div className="bg-indigo-100 p-3 rounded-xl mr-4">
@@ -60,7 +60,7 @@ const AllAttendance = () => {
           </div>
         </div>
 
-        {/* Filters */}
+       
         <div className="bg-white rounded-2xl shadow-xl p-6">
           <div className="flex items-center mb-4">
             <Filter className="text-indigo-600 mr-2" size={20} />
@@ -141,7 +141,7 @@ const AllAttendance = () => {
           </div>
         </div>
 
-        {/* Attendance Table */}
+       
         <div>
           {loading ? (
             <div className="bg-white rounded-2xl shadow-xl p-8">
@@ -153,7 +153,7 @@ const AllAttendance = () => {
             <>
               <AttendanceTable data={allAttendance} />
 
-              {/* Pagination */}
+            
               {pagination && pagination.pages > 1 && (
                 <div className="mt-6 flex justify-center items-center space-x-2">
                   <button
@@ -188,7 +188,7 @@ const AllAttendance = () => {
                 </div>
               )}
 
-              {/* Summary */}
+              
               {pagination && (
                 <div className="mt-4 text-center text-sm text-gray-600">
                   Showing {((currentPage - 1) * pagination.limit) + 1} to {Math.min(currentPage * pagination.limit, pagination.total)} of {pagination.total} records

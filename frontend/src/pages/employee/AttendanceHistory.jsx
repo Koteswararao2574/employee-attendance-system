@@ -85,7 +85,7 @@ const AttendanceHistory = () => {
           </div>
         </div>
 
-        {/* Calendar View */}
+     
         {showCalendar && (
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <h2 className="text-xl font-bold text-gray-800 mb-6">Calendar View</h2>
@@ -118,7 +118,7 @@ const AttendanceHistory = () => {
           </div>
         )}
 
-        {/* Filters */}
+       
         <div className="bg-white rounded-2xl shadow-xl p-6">
           <div className="flex items-center mb-4">
             <Filter className="text-blue-600 mr-2" size={20} />
@@ -160,7 +160,7 @@ const AttendanceHistory = () => {
           </div>
         </div>
 
-        {/* Attendance Records */}
+        
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <h2 className="text-xl font-bold text-gray-800 mb-6">Attendance Records</h2>
           
@@ -176,7 +176,7 @@ const AttendanceHistory = () => {
                 ))}
               </div>
 
-              {/* Pagination */}
+           
               {pagination && pagination.pages > 1 && (
                 <div className="mt-8 flex justify-center items-center space-x-2">
                   <button

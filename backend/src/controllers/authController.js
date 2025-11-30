@@ -1,14 +1,12 @@
 import User from '../models/User.js';
 import generateToken from '../utils/generateToken.js';
 
-// @desc    Register user
-// @route   POST /api/auth/register
-// @access  Public
+
 export const register = async (req, res) => {
   try {
     const { name, email, password, role, department } = req.body;
 
-    // Check if user exists
+    
     const userExists = await User.findOne({ email });
     if (userExists) {
       return res.status(400).json({
@@ -17,7 +15,7 @@ export const register = async (req, res) => {
       });
     }
 
-    // Generate employee ID
+    
     const lastUser = await User.findOne().sort({ createdAt: -1 });
     let employeeId = 'EMP001';
     
@@ -26,7 +24,7 @@ export const register = async (req, res) => {
       employeeId = `EMP${String(lastId + 1).padStart(3, '0')}`;
     }
 
-    // Create user
+   
     const user = await User.create({
       name,
       email,
@@ -56,14 +54,12 @@ export const register = async (req, res) => {
   }
 };
 
-// @desc    Login user
-// @route   POST /api/auth/login
-// @access  Public
+
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Validate input
+  
     if (!email || !password) {
       return res.status(400).json({
         success: false,
@@ -71,7 +67,7 @@ export const login = async (req, res) => {
       });
     }
 
-    // Check for user and include password
+    
     const user = await User.findOne({ email }).select('+password');
 
     if (!user) {
@@ -81,7 +77,7 @@ export const login = async (req, res) => {
       });
     }
 
-    // Check password
+   
     const isPasswordMatch = await user.comparePassword(password);
 
     if (!isPasswordMatch) {
@@ -111,9 +107,7 @@ export const login = async (req, res) => {
   }
 };
 
-// @desc    Get current logged in user
-// @route   GET /api/auth/me
-// @access  Private
+
 export const getMe = async (req, res) => {
   try {
     const user = await User.findById(req.user.id);

@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { attendanceAPI, dashboardAPI } from '../../services/api';
 
-// Async thunks
+
 export const checkIn = createAsyncThunk(
   'attendance/checkIn',
   async (_, { rejectWithValue }) => {
@@ -92,7 +92,7 @@ const attendanceSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // Check In
+      
       .addCase(checkIn.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -105,7 +105,7 @@ const attendanceSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Check Out
+      
       .addCase(checkOut.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -118,7 +118,7 @@ const attendanceSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Get History
+      
       .addCase(getMyHistory.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -132,7 +132,7 @@ const attendanceSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Get Summary
+      
       .addCase(getMySummary.pending, (state) => {
         state.loading = true;
       })
@@ -144,7 +144,7 @@ const attendanceSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Get Today Status
+      
       .addCase(getTodayStatus.pending, (state) => {
         state.loading = true;
       })
@@ -156,7 +156,7 @@ const attendanceSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Get Employee Dashboard
+      
       .addCase(getEmployeeDashboard.pending, (state) => {
         state.loading = true;
       })

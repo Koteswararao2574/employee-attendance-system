@@ -17,7 +17,7 @@ const Reports = () => {
   const [exporting, setExporting] = useState(false);
 
   useEffect(() => {
-    // Load current month by default
+    
     const now = new Date();
     const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
     const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
@@ -104,7 +104,7 @@ const Reports = () => {
           </div>
         </div>
 
-        {/* Filters */}
+       
         <div className="bg-white rounded-2xl shadow-xl p-6">
           <div className="flex items-center mb-4">
             <Filter className="text-blue-600 mr-2" size={20} />
@@ -178,7 +178,7 @@ const Reports = () => {
           </div>
         </div>
 
-        {/* Statistics */}
+        
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
           <div className="bg-white rounded-xl shadow-md p-6">
             <p className="text-sm text-gray-600 mb-1">Total Records</p>
@@ -202,7 +202,7 @@ const Reports = () => {
           </div>
         </div>
 
-        {/* Report Table */}
+      
         <div>
           {loading ? (
             <div className="bg-white rounded-2xl shadow-xl p-8">
@@ -221,7 +221,7 @@ const Reports = () => {
           )}
         </div>
 
-        {/* Export Information */}
+        
         <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
           <h3 className="font-bold text-blue-900 mb-2 flex items-center">
             <Download className="mr-2" size={20} />

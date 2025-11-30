@@ -163,12 +163,13 @@ Koteswara Rao
 
 ## Support
 
-For support, email [your-email] or open an issue in the repository.
+For support, email koteswaraonandikolu@gmail.com or open an issue in the repository.
 
 2. Backend Setup
 cd backendnpm install
 Create a .env file in the backend directory:
 MONGODB_URI=mongodb://localhost:27017/attendance-system# OR for MongoDB Atlas:# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/attendance-systemJWT_SECRET=your-secret-key-herePORT=5000FRONTEND_URL=http://localhost:5173
+
 3. Frontend Setup
 cd frontendnpm install
 Create a .env file in the frontend directory (if needed):
@@ -236,5 +237,6 @@ Push to the branch (git push origin feature/AmazingFeature)
 Open a Pull Request
 License
 This project is licensed under the ISC License.
-Author
-Koteswara Rao
+Author-Koteswara Rao
+college name-Mohan babu university
+contact number-9346768963

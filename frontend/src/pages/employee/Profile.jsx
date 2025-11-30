@@ -9,7 +9,7 @@ const Profile = () => {
   return (
     <MainLayout>
       <div className="max-w-4xl mx-auto space-y-6">
-        {/* Header */}
+      
         <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl shadow-xl p-8 text-white">
           <div className="flex items-center">
             <div className="bg-white/20 backdrop-blur-sm p-4 rounded-2xl mr-6">
@@ -22,7 +22,7 @@ const Profile = () => {
           </div>
         </div>
 
-        {/* Profile Information */}
+       
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Profile Information</h2>
           
@@ -91,7 +91,7 @@ const Profile = () => {
           </div>
         </div>
 
-        {/* Quick Stats */}
+       
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Quick Stats</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -110,7 +110,7 @@ const Profile = () => {
           </div>
         </div>
 
-        {/* Security Notice */}
+    
         <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-lg">
           <h3 className="font-bold text-yellow-900 mb-2">Security Notice</h3>
           <p className="text-sm text-yellow-800">

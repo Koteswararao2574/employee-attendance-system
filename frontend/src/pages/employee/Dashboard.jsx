@@ -33,13 +33,13 @@ const EmployeeDashboard = () => {
   return (
     <MainLayout>
       <div className="space-y-6">
-        {/* Welcome Section */}
+        
         <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl shadow-xl p-8 text-white">
           <h1 className="text-3xl font-bold mb-2">Welcome back, {user?.name}! 👋</h1>
           <p className="text-blue-100">Track your attendance and manage your work hours efficiently</p>
         </div>
 
-        {/* Check In/Out Section */}
+        
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <h2 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
             <Clock className="mr-2 text-blue-600" />
@@ -75,7 +75,7 @@ const EmployeeDashboard = () => {
           />
         </div>
 
-        {/* Monthly Stats */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-white rounded-xl shadow-md p-6">
             <div className="flex items-center justify-between">
@@ -126,7 +126,7 @@ const EmployeeDashboard = () => {
           </div>
         </div>
 
-        {/* Recent Attendance */}
+       
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <h2 className="text-xl font-bold text-gray-800 mb-6">Recent Attendance (Last 7 Days)</h2>
           

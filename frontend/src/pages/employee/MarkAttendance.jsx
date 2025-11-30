@@ -21,7 +21,7 @@ const MarkAttendance = () => {
   return (
     <MainLayout>
       <div className="max-w-2xl mx-auto space-y-6">
-        {/* Header */}
+        
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <div className="flex items-center mb-4">
             <div className="bg-blue-100 p-3 rounded-xl mr-4">
@@ -34,13 +34,13 @@ const MarkAttendance = () => {
           </div>
         </div>
 
-        {/* Current Time */}
+        
         <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl shadow-xl p-8 text-white text-center">
           <p className="text-lg mb-2">Current Time</p>
           <p className="text-5xl font-bold">{new Date().toLocaleTimeString()}</p>
         </div>
 
-        {/* Status Card */}
+        
         {todayStatus && (
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <h2 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
@@ -84,12 +84,12 @@ const MarkAttendance = () => {
           </div>
         )}
 
-        {/* Check In/Out Button */}
+        
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <CheckInButton todayStatus={todayStatus} onSuccess={refreshStatus} />
         </div>
 
-        {/* Guidelines */}
+        
         <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200">
           <h3 className="font-bold text-blue-900 mb-3 flex items-center">
             <Calendar className="mr-2" size={20} />

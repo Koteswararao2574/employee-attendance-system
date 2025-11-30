@@ -2,15 +2,13 @@ import Attendance from '../models/Attendance.js';
 import User from '../models/User.js';
 import { generateCSV } from '../utils/csvExport.js';
 
-// @desc    Check in
-// @route   POST /api/attendance/checkin
-// @access  Private (Employee)
+
 export const checkIn = async (req, res) => {
   try {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    // Check if already checked in today
+    
     const existingAttendance = await Attendance.findOne({
       userId: req.user._id,
       date: {
@@ -44,9 +42,7 @@ export const checkIn = async (req, res) => {
   }
 };
 
-// @desc    Check out
-// @route   POST /api/attendance/checkout
-// @access  Private (Employee)
+
 export const checkOut = async (req, res) => {
   try {
     const today = new Date();
@@ -89,9 +85,7 @@ export const checkOut = async (req, res) => {
   }
 };
 
-// @desc    Get my attendance history
-// @route   GET /api/attendance/my-history
-// @access  Private (Employee)
+
 export const getMyHistory = async (req, res) => {
   try {
     const { startDate, endDate, page = 1, limit = 10 } = req.query;
@@ -131,9 +125,7 @@ export const getMyHistory = async (req, res) => {
   }
 };
 
-// @desc    Get my attendance summary
-// @route   GET /api/attendance/my-summary
-// @access  Private (Employee)
+
 export const getMySummary = async (req, res) => {
   try {
     const { month, year } = req.query;
@@ -152,7 +144,7 @@ export const getMySummary = async (req, res) => {
     const summary = {
       totalDays: attendance.length,
       present: attendance.filter(a => a.status === 'present').length,
-      absent: 0, // This would need separate tracking
+      absent: 0, 
       late: attendance.filter(a => a.status === 'late').length,
       halfDay: attendance.filter(a => a.status === 'half-day').length,
       totalHours: attendance.reduce((sum, a) => sum + (a.totalHours || 0), 0).toFixed(2)
@@ -170,9 +162,7 @@ export const getMySummary = async (req, res) => {
   }
 };
 
-// @desc    Get today's attendance status
-// @route   GET /api/attendance/today
-// @access  Private (Employee)
+
 export const getTodayStatus = async (req, res) => {
   try {
     const today = new Date();
@@ -198,9 +188,7 @@ export const getTodayStatus = async (req, res) => {
   }
 };
 
-// @desc    Get all attendance (Manager)
-// @route   GET /api/attendance/all
-// @access  Private (Manager)
+
 export const getAllAttendance = async (req, res) => {
   try {
     const { startDate, endDate, department, status, page = 1, limit = 20 } = req.query;
@@ -225,7 +213,7 @@ export const getAllAttendance = async (req, res) => {
       .skip(skip)
       .limit(parseInt(limit));
 
-    // Filter by department if specified
+    
     if (department) {
       attendance = attendance.filter(a => a.userId.department === department);
     }
@@ -250,9 +238,7 @@ export const getAllAttendance = async (req, res) => {
   }
 };
 
-// @desc    Get employee attendance
-// @route   GET /api/attendance/employee/:id
-// @access  Private (Manager)
+
 export const getEmployeeAttendance = async (req, res) => {
   try {
     const { startDate, endDate } = req.query;
@@ -280,9 +266,7 @@ export const getEmployeeAttendance = async (req, res) => {
   }
 };
 
-// @desc    Get attendance summary (Manager)
-// @route   GET /api/attendance/summary
-// @access  Private (Manager)
+
 export const getAttendanceSummary = async (req, res) => {
   try {
     const { month, year } = req.query;
@@ -307,7 +291,7 @@ export const getAttendanceSummary = async (req, res) => {
       totalEmployees
     };
 
-    // Department-wise breakdown
+    
     const departmentStats = {};
     attendance.forEach(record => {
       const dept = record.userId.department;
@@ -334,9 +318,7 @@ export const getAttendanceSummary = async (req, res) => {
   }
 };
 
-// @desc    Get today's status (Manager)
-// @route   GET /api/attendance/today-status
-// @access  Private (Manager)
+
 export const getTodayStatusAll = async (req, res) => {
   try {
     const today = new Date();
@@ -371,9 +353,7 @@ export const getTodayStatusAll = async (req, res) => {
   }
 };
 
-// @desc    Export attendance to CSV
-// @route   GET /api/attendance/export
-// @access  Private (Manager)
+
 export const exportAttendance = async (req, res) => {
   try {
     const { startDate, endDate } = req.query;

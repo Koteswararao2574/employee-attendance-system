@@ -14,7 +14,7 @@ const TeamCalendar = () => {
   const [selectedDateRecords, setSelectedDateRecords] = useState([]);
 
   useEffect(() => {
-    // Fetch last 30 days of attendance
+    
     const endDate = new Date();
     const startDate = new Date();
     startDate.setDate(startDate.getDate() - 30);
@@ -27,7 +27,7 @@ const TeamCalendar = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    // Filter records for selected date
+    
     if (selectedDate && allAttendance) {
       const records = allAttendance.filter(record => {
         const recordDate = new Date(record.date);
@@ -68,7 +68,7 @@ const TeamCalendar = () => {
   return (
     <MainLayout>
       <div className="space-y-6">
-        {/* Header */}
+       
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <div className="flex items-center">
             <div className="bg-purple-100 p-3 rounded-xl mr-4">
@@ -82,7 +82,7 @@ const TeamCalendar = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Calendar */}
+          
           <div className="lg:col-span-2 bg-white rounded-2xl shadow-xl p-8">
             <h2 className="text-xl font-bold text-gray-800 mb-6">Calendar View</h2>
             {loading ? (
@@ -114,7 +114,7 @@ const TeamCalendar = () => {
             )}
           </div>
 
-          {/* Selected Date Details */}
+          
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <h2 className="text-xl font-bold text-gray-800 mb-6">
               {formatDate(selectedDate)}
@@ -170,7 +170,7 @@ const TeamCalendar = () => {
           </div>
         </div>
 
-        {/* Summary Cards */}
+       
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200">
             <div className="flex items-center justify-between mb-2">

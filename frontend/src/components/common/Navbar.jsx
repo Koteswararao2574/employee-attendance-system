@@ -56,7 +56,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop Menu */}
+        
           <div className="hidden md:flex md:items-center md:space-x-1">
             {links.map((link) => (
               <Link
@@ -74,7 +74,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* User Info & Logout */}
+         
           <div className="hidden md:flex md:items-center md:space-x-4">
             <div className="text-right">
               <p className="text-sm font-semibold text-gray-800">{user?.name}</p>
@@ -89,7 +89,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -101,7 +101,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+     
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="px-2 pt-2 pb-3 space-y-1">

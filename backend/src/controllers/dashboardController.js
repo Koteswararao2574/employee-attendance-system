@@ -1,19 +1,17 @@
 import Attendance from '../models/Attendance.js';
 import User from '../models/User.js';
 
-// @desc    Get employee dashboard data
-// @route   GET /api/dashboard/employee
-// @access  Private (Employee)
+
 export const getEmployeeDashboard = async (req, res) => {
   try {
     const userId = req.user._id;
     
-    // Get current month data
+    
     const now = new Date();
     const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
     const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
 
-    // Today's status
+    
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const todayAttendance = await Attendance.findOne({
@@ -24,13 +22,13 @@ export const getEmployeeDashboard = async (req, res) => {
       }
     });
 
-    // Month stats
+    
     const monthAttendance = await Attendance.find({
       userId,
       date: { $gte: startOfMonth, $lte: endOfMonth }
     });
 
-    // Last 7 days
+    
     const last7Days = new Date();
     last7Days.setDate(last7Days.getDate() - 7);
     const recentAttendance = await Attendance.find({
@@ -62,15 +60,13 @@ export const getEmployeeDashboard = async (req, res) => {
   }
 };
 
-// @desc    Get manager dashboard data
-// @route   GET /api/dashboard/manager
-// @access  Private (Manager)
+
 export const getManagerDashboard = async (req, res) => {
   try {
-    // Total employees
+  
     const totalEmployees = await User.countDocuments({ role: 'employee' });
 
-    // Today's attendance
+   
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const todayAttendance = await Attendance.find({
@@ -80,7 +76,7 @@ export const getManagerDashboard = async (req, res) => {
       }
     }).populate('userId', 'name email employeeId department');
 
-    // Weekly trend (last 7 days)
+   
     const weeklyData = [];
     for (let i = 6; i >= 0; i--) {
       const date = new Date();
@@ -100,7 +96,7 @@ export const getManagerDashboard = async (req, res) => {
       });
     }
 
-    // Department-wise stats
+    
     const employees = await User.find({ role: 'employee' });
     const departmentStats = {};
     

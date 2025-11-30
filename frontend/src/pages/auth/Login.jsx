@@ -38,7 +38,7 @@ const Login = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 flex items-center justify-center p-4">
       <div className="max-w-md w-full">
-        {/* Logo & Title */}
+        
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl shadow-lg mb-4">
             <Clock className="text-blue-600" size={32} />
@@ -47,7 +47,7 @@ const Login = () => {
           <p className="text-blue-100">Employee Attendance Management System</p>
         </div>
 
-        {/* Login Form */}
+        
         <div className="bg-white rounded-2xl shadow-2xl p-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Welcome Back</h2>
 
@@ -115,22 +115,6 @@ const Login = () => {
             </p>
           </div>
 
-          {/* Demo Credentials */}
-          <div className="mt-6 pt-6 border-t">
-            <p className="text-xs text-gray-500 text-center mb-3">Demo Credentials</p>
-            <div className="grid grid-cols-2 gap-3">
-              <div className="bg-blue-50 p-3 rounded-lg">
-                <p className="text-xs font-semibold text-blue-900 mb-1">Manager</p>
-                <p className="text-xs text-blue-700">manager@company.com</p>
-                <p className="text-xs text-blue-700">manager123</p>
-              </div>
-              <div className="bg-green-50 p-3 rounded-lg">
-                <p className="text-xs font-semibold text-green-900 mb-1">Employee</p>
-                <p className="text-xs text-green-700">employee1@company.com</p>
-                <p className="text-xs text-green-700">employee123</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

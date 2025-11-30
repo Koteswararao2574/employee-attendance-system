@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { managerAPI, dashboardAPI } from '../../services/api';
 
-// Async thunks
+
 export const getAllAttendance = createAsyncThunk(
   'manager/getAllAttendance',
   async (params, { rejectWithValue }) => {
@@ -100,7 +100,7 @@ const managerSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // Get All Attendance
+      
       .addCase(getAllAttendance.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -114,7 +114,7 @@ const managerSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Get Employee Attendance
+      
       .addCase(getEmployeeAttendance.pending, (state) => {
         state.loading = true;
       })
@@ -126,7 +126,7 @@ const managerSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Get Summary
+      
       .addCase(getAttendanceSummary.pending, (state) => {
         state.loading = true;
       })
@@ -138,7 +138,7 @@ const managerSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Get Today Status
+      
       .addCase(getTodayStatus.pending, (state) => {
         state.loading = true;
       })
@@ -150,7 +150,7 @@ const managerSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Get Manager Dashboard
+      
       .addCase(getManagerDashboard.pending, (state) => {
         state.loading = true;
       })
@@ -162,7 +162,7 @@ const managerSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Export CSV
+     
       .addCase(exportCSV.pending, (state) => {
         state.loading = true;
       })
