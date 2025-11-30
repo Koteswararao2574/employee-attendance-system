@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: employee-attendance-backend
+    env: node
+    region: oregon  # Change to your preferred region: oregon, frankfurt, singapore, mumbai, etc.
+    plan: free  # Change to 'starter' or 'standard' for paid plans
+    buildCommand: npm install
+    startCommand: npm start
+    rootDir: backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000  # Render will override this, but good to have a default
+      # Add these in Render Dashboard after deployment:
+      # MONGODB_URI - Your MongoDB Atlas connection string
+      # JWT_SECRET - Your JWT secret key
+      # FRONTEND_URL - Your Vercel frontend URL (optional, for CORS)
+
