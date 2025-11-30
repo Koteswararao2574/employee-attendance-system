@@ -237,6 +237,12 @@ Push to the branch (git push origin feature/AmazingFeature)
 Open a Pull Request
 License
 This project is licensed under the ISC License.
+<<<<<<< HEAD
 Author-Koteswara Rao
 college name-Mohan babu university
 contact number-9346768963
+=======
+Author
+
+Koteswara Rao
+>>>>>>> e8de3a63ddf3bf231b66445a8cd4e96c47ce8bc1
